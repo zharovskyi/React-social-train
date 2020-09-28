@@ -55,3 +55,45 @@ body{
 .content-img img:hover{
   transform: scaleX(-1);
 }
+/* contnet-about */
+.contnet-about{
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.about-foto{
+  display: flex;
+  border-radius: 50%;
+  width: 20%;
+  height: 170px;
+  background-color: #5682a3;
+}
+/* Search  */
+.search_input{
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+}
+.search_button{
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  outline: none;
+}
+.search_button:focus {
+  background-color: lightblue;
+}
+.send_button{
+  width: 20%;
+  background-color:  #5682a3;
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  cursor: pointer;
+}
