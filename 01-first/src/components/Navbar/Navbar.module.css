@@ -1,0 +1,15 @@
+.nav{
+    grid-area: n;
+    background-color: white;
+    height: 90vh;
+    border-right: 1px solid #E8EAEC;
+    padding-top: 30px;
+  }
+  .navItem{
+    padding: 20px;
+    font-size: 18px;
+    font-family: Verdana;
+  }
+  .navItem:last-child{
+    margin-top: 100px;
+  }
