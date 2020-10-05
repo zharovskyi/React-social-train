@@ -2,20 +2,25 @@ body{
   background-color: #E7EBF0;
 }
 .app-wrapper{
-  width: 80%;
   margin: 0 auto;
-  display: grid;
-  grid-template-areas:
-"h h h"
-"n c c";
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
-  /* grid-gap: 10px; */
+  width: 80%;
+  
+ 
 }
+.header{
+  width: 100%;
 
-.app-wrapper-contnent{
-  grid-area: c;
+}
+.content{
+  display: flex;
+  width: 100%;
   background-color: white;
   height: 90vh;
 }
-
+.app-wrapper-contnent{
+  background-color: white;
+  height: 90vh;
+}
+.active{
+  color:#6490b1;
+}
