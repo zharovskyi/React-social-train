@@ -5,31 +5,4 @@
   }
 
  
-  /* Search  */
-.searchInput{
-  display: flex;
-  width: 80%;
-  margin: 0 auto;
-}
-.searchButton{
-  width: 80%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 1px solid #555;
-  outline: none;
-}
-.searchButton:focus {
-  background-color: lightblue;
-}
-.sendButton{
-  width: 20%;
-  background-color:  #5682a3;
-  border: none;
-  color: white;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 1px solid #555;
-  cursor: pointer;
-} 
+ 

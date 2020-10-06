@@ -3,8 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
-ReactDOM.render(<App />,document.getElementById('root')
+import state from './redax/state';
+ReactDOM.render(
+<App 
+    state={state}
+/>,document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
