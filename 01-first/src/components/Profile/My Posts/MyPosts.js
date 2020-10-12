@@ -5,25 +5,34 @@ import Post from './Post/Post';
 const MyPosts = (props) => {
 
   let postsElement = props.posts.map(
-    post => <Post message={post.post}/>
+    post => <Post message={post.post} />
   )
-    return (
+
+  let newPostElement = React.createRef();
+
+  let addPost = () => {
+
+    let text = newPostElement.current.value;
+    props.addPost(text);
+  }
+
+  return (
     <div className={style.postBlock}>
       My Posts
-        <div>
-          New Posts
+      <div>
+        New Posts
         </div>
-        <div className={style.posts}>
-          {postsElement}
+      <div className={style.posts}>
+        {postsElement}
+      </div>
+      <div className={style.searchBlock}>
+        <div className={style.searchInput}>
+          <textarea ref={newPostElement} className={style.searchButton} type='text'></textarea>
+          <button onClick={addPost} className={style.sendButton} type='button' value="Send">Add Post</button>
         </div>
-        <div className={style.searchBlock}>
-          <div className={style.searchInput}>
-            <textarea className={style.searchButton} type='text'></textarea>
-            <input className={style.sendButton} type='button' value="Send"/>
-          </div>
-        </div>
+      </div>
     </div>
-    )
+  )
 }
 
 export default MyPosts;

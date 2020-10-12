@@ -1,16 +1,18 @@
+import { rerenderTree } from '../render';
+
 let state = {
     profilePage: {
         posts: [
             {
-              id: 1,
-              post: "HELOO"
+                id: 1,
+                post: "HELOO"
             },
             {
-              id: 2,
-              post: "How are you"
+                id: 2,
+                post: "How are you"
             },
-          ],
-        
+        ],
+
     },
     messagePage: {
         dialogData: [
@@ -49,35 +51,45 @@ let state = {
             {
                 id: 1,
                 message: 'Hi',
-                
+
             },
             {
                 id: 2,
                 message: 'Bra',
-                
+
 
             },
             {
                 id: 3,
                 message: 'Ok sdf sdf',
-                
+
             },
             {
                 id: 4,
                 message: 'How are you',
-                
+
             },
             {
                 id: 5,
                 message: 'Hello mate',
-                
+
             },
             {
                 id: 6,
                 message: 'No',
-                
+
             }
-            ]
+        ]
     },
 }
+
+export let addPost = (postMessage) => {
+    let newPost = {
+        id: 5,
+        post: postMessage
+    }
+    state.profilePage.posts.push(newPost);
+    rerenderTree(state);
+}
+
 export default state;

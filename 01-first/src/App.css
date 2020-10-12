@@ -15,11 +15,11 @@ body{
   display: flex;
   width: 100%;
   background-color: white;
-  height: 90vh;
+
 }
 .app-wrapper-contnent{
   background-color: white;
-  height: 90vh;
+
 }
 .active{
   color:#6490b1;
