@@ -11,11 +11,14 @@ const MyPosts = (props) => {
   let newPostElement = React.createRef();
 
   let addPost = () => {
+    props.addPost();
 
+  }
+
+  let onPostChange = () => {
     let text = newPostElement.current.value;
-    props.addPost(text);
-    newPostElement.current.value ='';
-    
+    props.updateNewPostText(text);
+
   }
 
   return (
@@ -29,7 +32,12 @@ const MyPosts = (props) => {
       </div>
       <div className={style.searchBlock}>
         <div className={style.searchInput}>
-          <textarea ref={newPostElement} className={style.searchButton} type='text'></textarea>
+          <textarea className={style.searchButton} type='text'
+            onChange={onPostChange}
+            ref={newPostElement}
+            value={props.newPostText}
+            updateNewPostText={props.updateNewPostText}
+          />
           <button onClick={addPost} className={style.sendButton} type='button' value="Send">Add Post</button>
         </div>
       </div>

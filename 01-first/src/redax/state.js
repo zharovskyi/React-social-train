@@ -12,6 +12,7 @@ let state = {
                 post: "How are you"
             },
         ],
+        newPostText: 'oleh zharovskyi'
 
     },
     messagePage: {
@@ -82,13 +83,19 @@ let state = {
         ]
     },
 }
-
-export let addPost = (postMessage) => {
+window.state = state;
+export let addPost = () => {
     let newPost = {
         id: 5,
-        post: postMessage
+        post: state.profilePage.newPostText
     }
     state.profilePage.posts.push(newPost);
+    state.profilePage.newPostText = '';
+    rerenderTree(state);
+}
+
+export let updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
     rerenderTree(state);
 }
 
