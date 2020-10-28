@@ -15,13 +15,10 @@ const MyPosts = (props) => {
   let newPostElement = React.createRef();
 
   let addPost = () => {
-    props.dispatch(addPostActionCreator());
-  }
 
-  let onPostChange = () => {
     let text = newPostElement.current.value;
-    // { type: 'UPDATE-NEW-POST-TEXT', newText: text } ---action 
-    props.dispatch(updateNewPostActionCreator(text));
+    props.addPost(text);
+    newPostElement.current.value = '';
 
   }
 
@@ -36,18 +33,11 @@ const MyPosts = (props) => {
       </div>
       <div className={style.searchBlock}>
         <div className={style.searchInput}>
-
-          <textarea className={style.searchButton} type='text'
-            onChange={onPostChange}
-            ref={newPostElement}
-            value={props.newPostText}
-            updateNewPostText={props.updateNewPostText}
-          />
-
+          <textarea ref={newPostElement} className={style.searchButton} type='text'></textarea>
           <button onClick={addPost} className={style.sendButton} type='button' value="Send">Add Post</button>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 
