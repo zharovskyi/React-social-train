@@ -1,3 +1,6 @@
+import dialogReducer from "./dialog-reducer";
+import profileReducer from "./profile-reducer";
+
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_MASSAGE_B0DY = 'UPDATE_NEW_MASSAGE_B0DY';
@@ -63,12 +66,10 @@ let store = {
                     id: 2,
                     message: 'Bra',
 
-
                 },
                 {
                     id: 3,
                     message: 'Ok sdf sdf',
-
                 },
                 {
                     id: 4,
@@ -88,7 +89,7 @@ let store = {
             ],
             newMassageBody: '',
         },
-        sidebar: [],
+        sidebar: {},
     },
     getState() {
         return this._state;
@@ -101,54 +102,13 @@ let store = {
         this._callSubscriber = observer;
     },
     dispatch(action) { // {type: 'ADD-POST'}
-        if (action.type === ADD_POST) {
-            let newPost = {
-                id: 5,
-                post: this._state.profilePage.newPostText
-            }
-            this._state.profilePage.posts.push(newPost);
-            this._state.profilePage.newPostText = '';
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_POST_TEXT) {
-            this._state.profilePage.newPostText = action.newText;
-            this._callSubscriber(this._state);
-        }else if (action.type === UPDATE_NEW_MASSAGE_B0DY) {
-            this._state.messagePage.newMassageBody = action.body;
-            this._callSubscriber(this._state);
-        }else if (action.type === SEND_MESSAGE) {
-            let body = this._state.messagePage.newMassageBody;
-            this._state.messagePage.newMassageBody = '';
-            this._state.messagePage.dialogMessage.push({id: 6, message: body});
-            this._callSubscriber(this._state);
-        }
+    this._state.profilePage = profileReducer(this._state.profilePage,action);
+    this._state.messagePage = dialogReducer(this._state.messagePage, action);
+    this._callSubscriber(this._state);
     }
 }
 
-export const addPostActionCreator = () => (
-    {
-        type: ADD_POST
-    }
-)
 
-export const updateNewPostActionCreator = (text) => (
-    {
-        type: UPDATE_NEW_POST_TEXT,
-        newText: text
-    }
-)
-// Dialog page 
-export const sendMessageCreator = () => (
-    {
-        type: SEND_MESSAGE
-    }
-)
-export const updateNewMessageBodyCreator = (body) => (
-
-    {
-        type: UPDATE_NEW_MASSAGE_B0DY,
-        body: body
-    }
-)
 
 export default store;
 
