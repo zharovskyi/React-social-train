@@ -21,28 +21,28 @@ const MyPosts = (props) => {
     props.dispatch(updateNewPostActionCreator(text));
   }
 
-  return (
-    <div className={style.postBlock}>
-      My Posts
-      <div>
-        New Posts
+return (
+  <div className={style.postBlock}>
+    My Posts
+    <div>
+      New Posts
         </div>
-      <div className={style.posts}>
-        {postsElement}
-      </div>
-      <div className={style.searchBlock}>
-        <div className={style.searchInput}>
-          <textarea className={style.searchButton} type='text'
-            onChange={onPostChange}
-            ref={newPostElement}
-            value={props.newPostText}
-            updateNewPostText={props.updateNewPostText}
-          />
-          <button onClick={addPost} className={style.sendButton} type='button' value="Send">Add Post</button>
-        </div>
+    <div className={style.posts}>
+      {postsElement}
+    </div>
+    <div className={style.searchBlock}>
+      <div className={style.searchInput}>
+        <textarea className={style.searchButton} type='text'
+          onChange={onPostChange}
+          ref={newPostElement}
+          value={props.newPostText}
+          updateNewPostText={props.updateNewPostText}
+        />
+        <button onClick={addPost} className={style.sendButton} type='button' value="Send">Add Post</button>
       </div>
     </div>
-  )
+  </div >
+)
 }
 
 export default MyPosts;

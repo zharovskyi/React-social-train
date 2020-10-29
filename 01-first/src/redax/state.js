@@ -1,8 +1,25 @@
+<<<<<<< HEAD
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_MASSAGE_B0DY = 'UPDATE_NEW_MASSAGE_B0DY';
 const SEND_MESSAGE = 'SEND_MESSAGE';
 
+=======
+import { rerenderTree } from '../render';
+
+// let state = {
+//     profilePage: {
+//         posts: [
+//             {
+//                 id: 1,
+//                 post: "HELOO"
+//             },
+//             {
+//                 id: 2,
+//                 post: "How are you"
+//             },
+//         ],
+>>>>>>> a0d2d4a1b441b20803999f06a64b34bd1aa57e7e
 
 let store = {
     _state: {
@@ -18,7 +35,7 @@ let store = {
                 },
             ],
             newPostText: 'oleh zharovskyi'
-    
+
         },
         messagePage: {
             dialogData: [
@@ -57,43 +74,44 @@ let store = {
                 {
                     id: 1,
                     message: 'Hi',
-    
+
                 },
                 {
                     id: 2,
                     message: 'Bra',
-    
-    
+
+
                 },
                 {
                     id: 3,
                     message: 'Ok sdf sdf',
-    
+
                 },
                 {
                     id: 4,
                     message: 'How are you',
-    
+
                 },
                 {
                     id: 5,
                     message: 'Hello mate',
-    
+
                 },
                 {
                     id: 6,
                     message: 'No',
-    
+
                 }
             ],
             newMassageBody: '',
         },
         sidebar: [],
     },
-    getState(){
+    getState() {
         return this._state;
     },
     _callSubscriber() {
+<<<<<<< HEAD
         console.log('State chnged')
     },
    
@@ -102,6 +120,17 @@ let store = {
     },
     dispatch(action) { // {type: 'ADD-POST'}
         if (action.type === ADD_POST) {
+=======
+        console.log('State chenged')
+    },
+
+    subscribe(observer) {
+        this._callSubscriber = observer;
+    },
+
+    dispatch(action) { // {type: 'ADD-POST'}
+        if (action.type === 'ADD-POST') {
+>>>>>>> a0d2d4a1b441b20803999f06a64b34bd1aa57e7e
             let newPost = {
                 id: 5,
                 post: this._state.profilePage.newPostText
@@ -109,6 +138,7 @@ let store = {
             this._state.profilePage.posts.push(newPost);
             this._state.profilePage.newPostText = '';
             this._callSubscriber(this._state);
+<<<<<<< HEAD
         } else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._state.profilePage.newPostText = action.newText;
             this._callSubscriber(this._state);
@@ -120,10 +150,16 @@ let store = {
             this._state.messagePage.newMassageBody = '';
             this._state.messagePage.dialogMessage.push({id: 6, message: body});
             this._callSubscriber(this._state);
+=======
+        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+            this._state.profilePage.newPostText = action.newText;
+            this._callSubscriber(this._state);
+>>>>>>> a0d2d4a1b441b20803999f06a64b34bd1aa57e7e
         }
     }
 }
 
+<<<<<<< HEAD
 export const addPostActionCreator = () => (
     {
         type: ADD_POST
@@ -150,6 +186,16 @@ export const updateNewMessageBodyCreator = (body) => (
     }
 )
 
+=======
+export let addPost = (postMessage) => {
+    let newPost = {
+        id: 5,
+        post: postMessage
+    }
+    state.profilePage.posts.push(newPost);
+    rerenderTree(state);
+}
+>>>>>>> a0d2d4a1b441b20803999f06a64b34bd1aa57e7e
 export default store;
 
 window.store = store;
