@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/React-social-train/01-first/build/static/css/main.b0191ae9.chunk.css",
+    "main.js": "/React-social-train/01-first/build/static/js/main.f04a2448.chunk.js",
+    "main.js.map": "/React-social-train/01-first/build/static/js/main.f04a2448.chunk.js.map",
+    "runtime-main.js": "/React-social-train/01-first/build/static/js/runtime-main.355e951e.js",
+    "runtime-main.js.map": "/React-social-train/01-first/build/static/js/runtime-main.355e951e.js.map",
+    "static/js/2.07736a0a.chunk.js": "/React-social-train/01-first/build/static/js/2.07736a0a.chunk.js",
+    "static/js/2.07736a0a.chunk.js.map": "/React-social-train/01-first/build/static/js/2.07736a0a.chunk.js.map",
+    "index.html": "/React-social-train/01-first/build/index.html",
+    "precache-manifest.4771843aac36bd27910029a28c749447.js": "/React-social-train/01-first/build/precache-manifest.4771843aac36bd27910029a28c749447.js",
+    "service-worker.js": "/React-social-train/01-first/build/service-worker.js",
+    "static/css/main.b0191ae9.chunk.css.map": "/React-social-train/01-first/build/static/css/main.b0191ae9.chunk.css.map",
+    "static/js/2.07736a0a.chunk.js.LICENSE.txt": "/React-social-train/01-first/build/static/js/2.07736a0a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.355e951e.js",
+    "static/js/2.07736a0a.chunk.js",
+    "static/css/main.b0191ae9.chunk.css",
+    "static/js/main.f04a2448.chunk.js"
+  ]
+}
