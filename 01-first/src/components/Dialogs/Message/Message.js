@@ -8,9 +8,15 @@ const Message = (props) => {
     let newMessageElement = React.createRef();
     let addMessage = () => {
         let text = newMessageElement.current.value;
+        // props.dispatch(addPostActionCreator());
         alert(text);
     }
-
+    
+    // let onMessageChange = () => {
+    // let text = newPostElement.current.value;
+    // // { type: 'UPDATE-NEW-POST-TEXT', newText: text } ---action 
+    // props.dispatch(updateNewPostActionCreator(text));
+    // }
     return (
         <div className={style.messages}>
             {/* {props.message}; */}
