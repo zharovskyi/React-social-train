@@ -12,13 +12,13 @@ const MyPosts = (props) => {
   let newPostElement = React.createRef();
 
   let addPost = () => {
-    props.dispatch(addPostActionCreator());
+    props.addPost();
+    // props.dispatch(addPostActionCreator());
   }
 
   let onPostChange = () => {
     let text = newPostElement.current.value;
-    // { type: 'UPDATE-NEW-POST-TEXT', newText: text } ---action 
-    props.dispatch(updateNewPostActionCreator(text));
+    props.updateNewPostText(text);
   }
 
 return (
@@ -26,9 +26,6 @@ return (
     My Posts
     <div>
       New Posts
-        </div>
-    <div className={style.posts}>
-      {postsElement}
     </div>
     <div className={style.searchBlock}>
       <div className={style.searchInput}>
@@ -41,7 +38,10 @@ return (
         <button onClick={addPost} className={style.sendButton} type='button' value="Send">Add Post</button>
       </div>
     </div>
-  </div >
+    <div className={style.posts}>
+      {postsElement}
+    </div>
+  </div>
 )
 }
 

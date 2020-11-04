@@ -6,7 +6,7 @@ import { sendMessageCreator, updateNewMessageBodyCreator } from '../../redax/dia
 
 
 const Dialogs = (props) => {
-    let state  = props.store.getState().messagePage;
+    let state  = props.messagePage;
     let dialogsElements = state.dialogData.map(
         dialog=><DialogItem name={dialog.name} imgSrc={dialog.imgSrc} id={dialog.id}/>
     )
@@ -18,11 +18,11 @@ const Dialogs = (props) => {
     let newMassageBody = state.newMassageBody;
     
     let onSendMessageClick = () => {
-        props.store.dispatch(sendMessageCreator());
+        props.sendMessage();
     }
     let onNewMessageChange =(e) => {
         let body = e.target.value;      
-        props.store.dispatch(updateNewMessageBodyCreator(body));    
+        props.updateNewMessageBody(body);
     }
     return (
         <div className={style.dialogs}>
