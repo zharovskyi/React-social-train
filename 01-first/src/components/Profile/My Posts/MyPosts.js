@@ -3,6 +3,7 @@ import { addPostActionCreator, updateNewPostActionCreator } from '../../../redax
 import style from './MyPosts.module.css';
 import Post from './Post/Post';
 
+
 const MyPosts = (props) => {
 
   let postsElement = props.posts.map(
@@ -13,7 +14,6 @@ const MyPosts = (props) => {
 
   let addPost = () => {
     props.addPost();
-    // props.dispatch(addPostActionCreator());
   }
 
   let onPostChange = () => {
@@ -33,7 +33,6 @@ return (
           onChange={onPostChange}
           ref={newPostElement}
           value={props.newPostText}
-          updateNewPostText={props.updateNewPostText}
         />
         <button onClick={addPost} className={style.sendButton} type='button' value="Send">Add Post</button>
       </div>

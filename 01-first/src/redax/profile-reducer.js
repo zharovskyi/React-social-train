@@ -22,12 +22,24 @@ const profileReducer = (state = initialState, action) => {
                 id: 5,
                 post: state.newPostText
             }
-            state.posts.push(newPost);
-            state.newPostText = '';
-            return state;
+            return {
+                ...state,
+                newPostText: '',
+                posts: [...state.posts, {
+                    id: 5,
+                    post: state.newPostText
+                }]
+            }
+            // state.posts.push(newPost);
+            // state.newPostText = '';
+            // return state;
         case UPDATE_NEW_POST_TEXT:
-            state.newPostText = action.newText;
-            return state;
+            return {
+                ...state,
+                newPostText: action.newText
+            }
+            // state.newPostText = action.newText;
+            // return state;
             default:
                 return state;
     }

@@ -7,12 +7,12 @@ import { sendMessageCreator, updateNewMessageBodyCreator } from '../../redax/dia
 
 const Dialogs = (props) => {
     let state  = props.messagePage;
-    let dialogsElements = state.dialogData.map(
-        dialog=><DialogItem name={dialog.name} imgSrc={dialog.imgSrc} id={dialog.id}/>
+    let dialogsElements = state.dialogs.map(
+        dialog=><DialogItem name={dialog.name} imgSrc={dialog.imgSrc} id={dialog.id} key={dialog.id}/>
     )
-    
-    let messagesElements = state.dialogMessage.map(
-        m =><Message message={m.message} id={m.id}/>
+    // debugger;
+    let messagesElements = state.messages.map(
+        m =><Message message={m.message} id={m.id} key={m.id}/>
     ) 
 
     let newMassageBody = state.newMassageBody;
@@ -36,7 +36,7 @@ const Dialogs = (props) => {
                         <textarea 
                             value={newMassageBody} 
                             onChange = {onNewMessageChange}
-                            placeholder="Enter MAssege">
+                            placeholder="Enter Massege">
                         </textarea>
                     </div>
                     <div>
